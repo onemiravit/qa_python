@@ -64,7 +64,7 @@ class TestBooksCollector:
         assert collector.books_genre['Смешарики'] == genre    # Изменено: проверяем жанр книги
 
     
-    def test_get_book_genre_returns_correct_genre(self):      # Проверка метода получения жанра кники по ее имени
+    def test_get_book_genre_returns_correct_genre(self):      # Изменено Тест метода get_book_genre - Проверка метода получения жанра книги по ее имени
         collector = BooksCollector()
         
         collector.books_genre['Незнайка на Луне'] = 'Фантастика'          # Добавили книгу Задали жанр
@@ -151,4 +151,17 @@ class TestBooksCollector:
 
         assert result == expected_favorites                             # Проверили, что список книг в переменной result и expected_favorites одинаковый
 
+
+    def test_get_books_genre_returns_books_genre(self):
+        collector = BooksCollector()
+
+        collector.books_genre = {
+            'Незнайка на Луне': 'Фантастика',
+            'Вий': 'Ужасы'
+    }
+
+        assert collector.get_books_genre() == {
+            'Незнайка на Луне': 'Фантастика',
+            'Вий': 'Ужасы'
+    }
     
