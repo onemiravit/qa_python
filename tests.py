@@ -100,7 +100,7 @@ class TestBooksCollector:
         'Ужасы',
         'Детективы'
     ])
-    def test_get_books_for_children_age_rating_book_not_in_list(self, genre):
+    def test_get_books_for_children_age_rating_book_not_in_list(self, genre): # Проверка метода возвражения книг для детей
         collector = BooksCollector()
         
         collector.books_genre['Вий'] = genre                      # Изменено: добавили словарь с книгой и жанрами не для детей
